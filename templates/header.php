@@ -11,29 +11,46 @@ version 1.0
 <head>
 <meta charset="UTF-8">
 <title><?php bloginfo('description'); ?> | <?php bloginfo('name');?> |ADE'</title>
-<!--Remy Sharp Shim --> 
-<!--[if lt IE 9]> 
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
-</script> 
-<![endif]-->
+ <!-- meta-->   
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />  
+    
 <!-- begin styles here -->
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
-<!--<link href= "css/sstyles.css" type="text/css" rel="stylesheet"> -->
+<!--<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flexslider.css" type="text/css"> -->
     
-<!--<link href="css/blueberry.css" type="text/css" rel="stylesheet"> -->
+<!-- scripts go here here-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
+    <!-- flex slider will go here here-->
+    <!-- flex ends here-->
+     <!--Toggle for navigation drop down is   here-->
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function()){//enable on window load
+            $("#toggle").click(function(){ //when toggle clicked
+                $("#navigation").toggle(); //opens and closes nav
+            
+        });
+    });
+    </script>
+     <!-- toggle ends here-->
+    
+    
 <!-- begin wordpress head -->
     <?php wp_head(); ?>
-    <!-- end wordpress head -->
+<!-- end wordpress head -->
+    
 </head>
-    <body <?php body_class(); ?>>
-<div id="wrapper">
+<body <?php body_class(); ?>>
+
+    
 <!--begin header  -->
-<header>
-<h1>ADE'</h1>
-</header>
+
+    <h1 id="logo"><a href="<?php echo get_option('home'); ?>">ADE'</a></h1>
+    <img id="toggle" src="<?php bloginfo('template_directory'); ?>/images/img-toggle.png" width="25" height="25" alt="Toggle Menu">
+
 <!-- end header -->
-<!--begin nav  -->
-<div id="nav">
+    
+<!--begin old static nav  -->
+<!--<div id="nav">
 <ul>
 
 <li><a href="index.html">HOME</a></li>
@@ -45,4 +62,11 @@ version 1.0
 <li><a href="music.html">MUSIC</a></li>
 
 </ul>
-</div><!-- end nav div -->
+</div><!-- end old nav div -->
+    <!-- this is wordpress navigation-->
+    <div id="nav">
+    <?php wp_nav_menu(array('theme_location' => 'main-menu', 'container' => 'div', 'container_id' => 'navigation',)); ?>
+        </div>
+    <!--end nav-->
+     <!--begin middle ??? here-->
+     <!-- <div id="middle">--> 
