@@ -17,7 +17,7 @@ version 1.0
 <small>Posted on <?php the_time('F j, Y'); //get the time ?> by <?php the_author(); //gets authors name ?> in <?php the_category(', ');//gets category ?></small>
 <a href="<?php the_permalink(); //links to page or posting ?>">
     <?php the_post_thumbnail( 'thumbnail' ); ?></a>
-<p><?php echo get_the_exerpt(); //gets the postings exerpt ?><a href="<?php the_permalink(); ?>">Full Story&nbsp;&raquo;</a></p>
+<p><?php echo get_the_excerpt(); //gets the postings exerpt ?><a href="<?php the_permalink(); ?>">Full Story&nbsp;&raquo;</a></p>
     <!--page content goes here  -->
 </article>
         <?php endwhile; endif;  //ends loop ?>
